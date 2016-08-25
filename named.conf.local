@@ -6,10 +6,10 @@
 // organization
 include "/etc/bind/zones.rfc1918";
 
-zone "mto.ifsp.edu.br" {
+zone "xxx.ifsp.edu.br" { //Troque xxx pela sigla do câmpus conforme o domínio.
         type master;
-        file "/etc/bind/zones/db.mto.ifsp.edu.br";
-        allow-transfer { 10.0.0.1; 10.0.0.33; 200.133.218.173; };
+        file "/etc/bind/zones/db.xxx.ifsp.edu.br";
+        allow-transfer { X.X.X.X; X.X.X.X; X.X.X.X; }; //Troque pelos IPs do seu gateway e do seu servidor slave.
 };
 
 
