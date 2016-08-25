@@ -1,44 +1,20 @@
 $TTL    120
-@       IN      SOA     ns1.mto.ifsp.edu.br.    admin.mto.ifsp.edu.br.  (
-                 2707201603                     ; Serial
+@       IN      SOA     ns1.xxx.ifsp.edu.br.    admin.xxx.ifsp.edu.br.  ( ; Substituir ns1.xxx.ifsp.edu.br pelo FQDN do seu servidor DNS master. Substituir o xxx de admin.xxx.ifsp.edu.br pela sigla do câmpus.
+                        100                     ; Serial (SUBIR ESSE NÚMERO SEMPRE QUE EDITAR ESTE ARQUIVO.)
                         120                     ; Refresh
                         120                     ; Retry
                         120                     ; Expire
                         120 )                   ; Negative Cache TTL
 
 ; Name server
-mto.ifsp.edu.br.        IN              NS      ns1.mto.ifsp.edu.br.
-mto.ifsp.edu.br.        IN              NS      ns2.mto.ifsp.edu.br.
+xxx.ifsp.edu.br.        IN              NS      ns1.xxx.ifsp.edu.br. ; Troque o xxx de xxx.ifsp.edu.br. pela sigla do câmpus e ns1.xxx.ifsp.edu.br pelo FQDN do seu servidor de nomes. O ponto final e necessario.
+xxx.ifsp.edu.br.        IN              NS      ns2.xxx.ifsp.edu.br. ; Mesma coisa da linha anterior, mas ns2.xxx.ifsp.edu.br refere-se ao seu servidor slave.
 
 ; A records for name servers
-ns1                     IN              A       200.133.218.172
-ns2                     IN              A       200.133.218.173
+ns1                     IN              A       200.133.218.172 ; ns1 refere-se ao nome do host, sem domínio do seu servidor dns master.
+ns2                     IN              A       200.133.218.173 ; ns2 refere-se ao nome do host, sem domínio, do seu servidor dns slave.
 
 ; Other A records
-@                       IN              A       200.133.214.229
-www                     IN              A       200.133.214.229
-cra                     IN              A       200.133.214.229
-cgp                     IN              A       200.133.214.229
-cap                     IN              A       200.133.214.229
-
-suporte                 IN              A       200.133.218.172
-requisicaocra           IN              A       200.133.218.172
-requisicaocgp           IN              A       200.133.218.172
-manutencao              IN              A       200.133.218.172
-projetos                IN              A       200.133.218.172
-redmine                 IN              A       200.133.218.172
-chat                    IN              A       200.133.218.172
-piwik                   IN              A       200.133.218.172
-ss                      IN              A       200.133.218.172
-*.ss                    IN              A       200.133.218.172
-ava                     IN              A       200.133.218.172
-nuvem                   IN              A       200.133.218.172
-formularios             IN              A       200.133.218.172
-wiki                    IN              A       200.133.218.172
-
-noc                     IN              A       200.133.218.173
-
-aluno                   IN              A       200.133.218.174
-
-wd                      IN              A       200.133.218.171
-
+@                       IN              A       200.133.214.229 ; entrada que define a origem do seu domínio. Referente ao destino quando um usuario prcurar por ifsp.edu.br na internet, por exemplo.
+www                     IN              A       X.X.X.X ; a partir daqui são os registros dns diversos que o câmpus pode precisar. Os mais comuns são do tipo A, que mapeiam um nome a um IP.  Neste exemplo está criado, por exemplo, www.xxx.ifsp.edu.br.
+suporteti               IN              A       X.X.X.X
