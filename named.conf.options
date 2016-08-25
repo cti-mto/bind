@@ -4,7 +4,7 @@ options {
         listen-on { any; };
 
         recursion no;
-        allow-transfer { 10.0.0.1; 10.0.0.33; 200.133.218.173; };
+        allow-transfer { X.X.X.X; X.X.X.X; X.X.X.X; }; //Substitua pelos IPs internos e externos do seus servidores slave e o gateway  da rede.
 
         dnssec-validation auto;
 
